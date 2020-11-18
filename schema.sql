@@ -16,13 +16,13 @@ CREATE TABLE "departments" (
 CREATE TABLE "dept_emp" (
 	emp_no INT NOT NULL,
 	dept_no VARCHAR(50) NOT NULL,
-	FOREIGN KEY (dept_no) REFERENCES "Department"(dept_no)
+	FOREIGN KEY (dept_no) REFERENCES "Department"(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES "Employees"(emp_no)
 );
 
 CREATE TABLE "dept_manager" (
 	dept_no VARCHAR(50) NOT NULL,
-	emp_no INT NOT NULL
+	emp_no INT NOT NULL,
 	FOREIGN KEY (dept_no) REFERENCES "Department"(dept_no),
 	FOREIGN KEY (emp_no) REFERENCES "Employees"(emp_no)
 );
@@ -34,7 +34,8 @@ CREATE TABLE "employees" (
 	first_name VARCHAR(50) NOT NULL,
 	last_name VARCHAR(50) NOT NULL,
 	sex VARCHAR(50) NOT NULL,
-	hire_date DATE NOT NULL
+	hire_date DATE NOT NULL,
+	PRIMARY KEY(emp_no)
 );
 
 
